@@ -17,3 +17,6 @@ Registry: Docker images can be stored in a registry, such as Docker Hub, which a
 Containers: When you run a Docker image, it creates a container, which is a running instance of the image. Containers are isolated from each other and the host system, providing a consistent environment for applications.
 
 In summary, a Docker image is a crucial component of the Docker ecosystem, enabling developers to package applications and their dependencies in a standardized way for deployment and execution.
+
+================================================================================================================================
+
