@@ -1,0 +1,19 @@
+what is an image in doker
+
+In Docker, an image is a lightweight, standalone, and executable software package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are the building blocks of Docker containers.
+
+Here are some key points about Docker images:
+
+Layered Architecture: Docker images are built in layers. Each layer represents a set of file changes, and when you build an image, Docker creates a new layer on top of the existing layers. This layered structure helps in efficient storage and sharing of images.
+
+Immutability: Once an image is created, it does not change. If you need to make changes, you create a new image based on the existing one. This immutability ensures consistency across environments.
+
+Portability: Docker images can be easily shared and run on any system that has Docker installed, making it easier to move applications between development, testing, and production environments.
+
+Dockerfile: Images are usually created from a Dockerfile, which is a script containing a series of instructions on how to build the image. The Dockerfile specifies the base image, the commands to install dependencies, copy files, set environment variables, and define the entry point for the container.
+
+Registry: Docker images can be stored in a registry, such as Docker Hub, which allows users to share images with others. Users can pull images from the registry to run containers on their local machines or push their own images to share.
+
+Containers: When you run a Docker image, it creates a container, which is a running instance of the image. Containers are isolated from each other and the host system, providing a consistent environment for applications.
+
+In summary, a Docker image is a crucial component of the Docker ecosystem, enabling developers to package applications and their dependencies in a standardized way for deployment and execution.
