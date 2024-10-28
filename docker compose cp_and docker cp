@@ -1,0 +1,36 @@
+The docker-compose cp command is used to copy files or directories between a running Docker container managed by Docker Compose and the local filesystem. This command is particularly useful when you want to transfer files into or out of a service's container without having to use docker cp, which requires you to know the container ID.
+
+docker-compose cp [OPTIONS] SERVICE:SRC_PATH DEST_PATH
+or
+
+docker-compose cp [OPTIONS] SRC_PATH SERVICE:DEST_PATH
+Parameters
+SERVICE: The name of the service defined in your docker-compose.yml file.
+SRC_PATH: The path of the file or directory you want to copy from (or to) the container.
+DEST_PATH: The path on the local filesystem (or in the container) where you want to copy the file or directory.
+Options
+-f, --follow : Follow symlinks in the source path.
+--help: Display help information.
+Examples
+Copying a file from the container to the local filesystem:
+
+docker-compose cp my_service:/path/in/container/file.txt ./local/path/
+This command copies file.txt from the my_service container to the local directory ./local/path/.
+
+Copying a file from the local filesystem to the container:
+
+docker-compose cp ./local/path/file.txt my_service:/path/in/container/
+This command copies file.txt from the local directory ./local/path/ to the specified path in the my_service container.
+
+Copying a directory:
+
+To copy a directory, you can use the same syntax. For example:
+
+docker-compose cp my_service:/path/in/container/my_directory ./local/path/
+or
+
+docker-compose cp ./local/path/my_directory my_service:/path/in/container/
+Notes
+The service must be running for the docker-compose cp command to work. You can start your services using docker-compose up before executing the copy command.
+The paths must be absolute or relative to the context of the command being executed.
+Using docker-compose cp can simplify file management between your local environment and your Docker containers, especially during development and debugging.
